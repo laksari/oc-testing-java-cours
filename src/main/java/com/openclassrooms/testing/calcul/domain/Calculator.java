@@ -59,7 +59,7 @@ public class Calculator {
 	}
 
 	public Set<Integer> digitsSet(int number) {
-		final Set<Integer> integers = new HashSet<Integer>();
+		final Set<Integer> integers = new HashSet<>();
 		final String numberString = String.valueOf(number);
 
 		for (int i = 0; i < numberString.length(); i++) {
