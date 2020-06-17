@@ -19,6 +19,7 @@ public class CalculatorController {
 
 	public static final String CALCULATOR_TEMPLATE = "calculator";
 
+	// Test ************************
 	@Inject
 	CalculatorService calculatorService;
 
