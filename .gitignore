@@ -16,3 +16,6 @@ buildNumber.properties
 \.project
 
 \.settings/
+/bin/
+*.log
+
