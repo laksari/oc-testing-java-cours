@@ -18,7 +18,7 @@ import com.openclassrooms.testing.calcul.service.CalculatorService;
 public class CalculatorController {
 
 	public static final String CALCULATOR_TEMPLATE = "calculator";
-
+	// test 4
 	// Test test2 test3 ************************
 	// test test test 10000000000000000000
 	@Inject
