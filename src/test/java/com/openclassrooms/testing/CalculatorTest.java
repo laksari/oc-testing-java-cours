@@ -1,10 +1,12 @@
 package com.openclassrooms.testing;
 
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.text.MessageFormat;
 import java.time.Duration;
 import java.time.Instant;
+import java.util.Set;
 
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
@@ -58,7 +60,9 @@ public class CalculatorTest {
 		int somme = calculatorUnderTest.add(a, b);
 
 		// Assert
-		assertEquals(5, somme);
+		//assertEquals(5, somme);
+		
+		assertThat(somme).isEqualTo(5);
 	}
 
 	@Test
@@ -71,7 +75,9 @@ public class CalculatorTest {
 		int produit = calculatorUnderTest.multiply(a, b);
 
 		// Assert
-		assertEquals(462, produit);
+		//assertEquals(462, produit);
+		
+		assertThat(produit).isEqualTo(462);
 	}
 
 	@ParameterizedTest(name = "{0} x 0 doit être égal à 0")
@@ -83,7 +89,9 @@ public class CalculatorTest {
 		int actualResult = calculatorUnderTest.multiply(arg, 0);
 
 		// Assert -- ça vaut toujours zéro !
-		assertEquals(0, actualResult);
+		//assertEquals(0, actualResult);
+		
+		assertThat(actualResult).isEqualTo(0);
 	}
 
 	@ParameterizedTest(name = "{0} + {1} doit être égal à {2}")
@@ -95,7 +103,9 @@ public class CalculatorTest {
 		int actualResult = calculatorUnderTest.add(arg1, arg2);
 
 		// Assert
-		assertEquals(expectResult, actualResult);
+		//assertEquals(expectResult, actualResult);
+		
+		assertThat(actualResult).isEqualTo(expectResult);
 	}
 
 	@Timeout(1)
@@ -108,6 +118,19 @@ public class CalculatorTest {
 
 		// Assert
 		// ...
+	}
+	
+	
+	@Test
+	public void digitsSet_shouldReturnsTheSetOfDigits_ofPositiveInteger() {
+		// GIVEN
+		int number = 95897;
+
+		// WHEN
+		Set<Integer> actualDigits = calculatorUnderTest.digitsSet(number);
+
+		// THEN
+		 assertThat(actualDigits).containsExactlyInAnyOrder(5,8,9,7);
 	}
 
 }
