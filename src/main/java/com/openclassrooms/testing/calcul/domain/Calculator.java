@@ -56,7 +56,7 @@ public class Calculator {
 
 		for (int i = 0; i < numberString.length(); i++) {
 			if (numberString.charAt(i) != '-') {
-				integers.add(Integer.parseInt(numberString, i, i + 1, 10));
+				integers.add(Integer.parseInt(numberString.substring(i, i+1)));
 			}
 		}
 		return integers;

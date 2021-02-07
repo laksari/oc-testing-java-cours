@@ -190,7 +190,7 @@ public class CalculatorTest {
 		// 12! est mis en cache par le test précédent
 		
 		// WHEN
-		Set<Integer> actualDigits = calculatorUnderTest.digitsSet(cacheFactorial);
+		Set<Integer> actualDigits = calculatorUnderTest.digitsSet(12*11*10*9*8*7*6*5*4*3*2);
 		
 		// THEN
 		assertThat(actualDigits).containsExactlyInAnyOrder(0, 1, 4, 6, 7, 9);
